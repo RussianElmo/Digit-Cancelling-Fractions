@@ -14,14 +14,13 @@ namespace Digit_Cancelling_Fractions
             float denominator_right;
 
             int counter = 0;
-            double fraction;
-            double fraction_test1;
-            double fraction_test2;
+            float fraction;
+            float fraction_test1;
 
             int correct_numerator = 1;
             int correct_denominator = 1;
 
-            while (counter < 4)
+            while (counter < 1)
             {
                 for(int n = 10; n < 100; n++)
                 {
@@ -39,37 +38,19 @@ namespace Digit_Cancelling_Fractions
                         denominator_right = d % 10;
                         if (numerator_right == denominator_left)
                         {
-                            fraction_test1 = (double)numerator_left / denominator_right;
+                            fraction_test1 = (float)numerator_left / denominator_right;
+
                             if (fraction_test1 == fraction)
                             {
                                 counter++;
-                                
                                 correct_denominator *= d;
                                 correct_numerator *= n;
                             }
                         }
-                        else if (numerator_left == denominator_right)
-                        {
-                            fraction_test2 = (double)numerator_right / denominator_left;
-
-                            if (fraction_test2 == fraction)
-                            {
-                                counter++;
-                                Console.WriteLine(n);
-                                Console.WriteLine(d);
-                                correct_denominator *= d;
-                                correct_numerator *= n;
-                            }
-                        }
-                        
-
-
                     }
                 }
-                
             }
-            Console.WriteLine(correct_numerator);
-            Console.WriteLine(correct_denominator);
+            Console.WriteLine(correct_denominator / correct_numerator);
         }
     }
 }
